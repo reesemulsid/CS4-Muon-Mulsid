@@ -48,8 +48,8 @@ public class Store {
     // loop over itemList and print all items with the specified type
   }
   public void filterCheap(double maxCost){
-    maxCost = itemList[0];
-    for (int i=0; i<itemList.length; i++) {
+    maxCost = Item getCost();
+    for (int i=0; i<itemList.size(); i++) {
         if(itemList[i] > maxCost) {
             maxCost = itemList[i];
         }
