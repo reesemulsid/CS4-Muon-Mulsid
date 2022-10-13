@@ -26,7 +26,7 @@ public class Item {
   }
   public static void printAllItems(){
     for(Item i : completeItemList){
-      System.out.printf("Name: %s%nType: %s%nCost:%.2f%n", completeItemList.Item.getName());
+      System.out.printf("Name: %s%nType: %s%nCost:%.2f%n", completeItemList.get(i), completeItemList.getType(), completeItemList.getCost());
     }
   }
 }
