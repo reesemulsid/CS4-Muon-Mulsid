@@ -22,13 +22,12 @@ public class Store {
   }
   public void sellItem(int index){
       if (index <= itemList.size()) {
-          
+          System.out.println("")
       }
-      
+
       else {
           System.out.println("There are only " + itemList.size() + " items in the store.");
       }
-    // check if index is within the size of the itemList (if not, print statement that there are only x items in the store)
     // get Item at index from itemList and add its cost to earnings
     // print statement indicating the sale
   }
@@ -43,12 +42,18 @@ public class Store {
     // print statement indicating the sale
   }
   public void addItem(Item i){
-    // add Item i to store's itemList
+    itemList.add(i);
   }
   public void filterType(String type){
     // loop over itemList and print all items with the specified type
   }
   public void filterCheap(double maxCost){
+    maxCost = itemList[0];
+    for (int i=0; i<itemList.length; i++) {
+        if(itemList[i] > maxCost) {
+            maxCost = itemList[i];
+        }
+    }
     // loop over itemList and print all items with a cost lower than or equal to the specified value
   }
   public void filterExpensive(double minCost){
