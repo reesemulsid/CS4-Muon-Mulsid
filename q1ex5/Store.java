@@ -57,7 +57,7 @@ public class Store {
   }
 
   public void filterType(String type) {
-    for(String type: itemList) {
+    for (String type : itemList) {
       System.out.println(i);
     }
   }
@@ -69,7 +69,7 @@ public class Store {
     for (int i = 0; i < itemList.size(); i++) {
       Item sampleProduct = itemList.get(i);
       if (sampleProduct.getCost() > maxCost) {
-        maxCost = sampleCost;
+        maxCost = sampleProduct.getCost();
       }
     }
 
@@ -87,7 +87,7 @@ public class Store {
     for (int i = 0; i < itemList.size(); i++) {
       Item sampleProduct = itemList.get(i);
       if (sampleProduct.getCost() < minCost) {
-        minCost = sampleCost;
+        minCost = sampleProduct.getCost();
       }
     }
 
@@ -99,7 +99,7 @@ public class Store {
   }
 
   public static void printStats() {
-    for (Item i : storeList) {
+    for (Store i : storeList) {
       System.out.println(i.getName());
       System.out.println(i.getEarnings());
     }
