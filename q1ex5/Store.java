@@ -25,8 +25,7 @@ public class Store {
   public void sellItem(int index) {
     if (index < itemList.size()) {
       Item product = itemList.get(index);
-      double itemCost = product.getCost();
-      double sale = earnings + itemCost;
+      double sale = earnings + product.getCost();
       System.out.println("Store's current sales are " + sale);
     } else {
       System.out.println("There are only " + itemList.size() + " items in the store.");
@@ -35,10 +34,8 @@ public class Store {
 
   public void sellItem(String name) {
     for (Item i : itemList) {
-      String sampleName = i.getName();
-      if (sampleName == name) {
-        double itemCost = i.getCost();
-        double sale = earnings + itemCost;
+      if (i.getName() == name) {
+        double sale = earnings + i.getCost();
         System.out.println("Store's current sales are " + sale);
       } else {
         System.out.println("There are only " + itemList.size() + " items in the store.");
@@ -48,8 +45,7 @@ public class Store {
 
   public void sellItem(Item i) {
     if (itemList.contains(i)) {
-      double itemCost = i.getCost();
-      double sale = earnings + itemCost;
+      double sale = earnings + i.getCost();
       System.out.println("Store's current sales are " + sale);
     } else {
       System.out.println("The store does not sell this item.");
@@ -61,7 +57,9 @@ public class Store {
   }
 
   public void filterType(String type) {
-    // loop over itemList and print all items with the specified type
+    for(String type: itemList) {
+      System.out.println(i);
+    }
   }
 
   public void filterCheap(double maxCost) {
@@ -70,17 +68,14 @@ public class Store {
 
     for (int i = 0; i < itemList.size(); i++) {
       Item sampleProduct = itemList.get(i);
-      double sampleCost = sampleProduct.getCost();
-      if (sampleCost > maxCost) {
+      if (sampleProduct.getCost() > maxCost) {
         maxCost = sampleCost;
       }
     }
 
     for (Item j : itemList) {
-      double productCosts = j.getCost();
-      if (productCosts <= maxCost) {
-        String productName = j.getName();
-        System.out.println(productName);
+      if (j.getCost() <= maxCost) {
+        System.out.println(j.getName());
       }
     }
   }
@@ -91,17 +86,14 @@ public class Store {
 
     for (int i = 0; i < itemList.size(); i++) {
       Item sampleProduct = itemList.get(i);
-      double sampleCost = sampleProduct.getCost();
-      if (sampleCost < minCost) {
+      if (sampleProduct.getCost() < minCost) {
         minCost = sampleCost;
       }
     }
 
     for (Item j : itemList) {
-      double productCosts = j.getCost();
-      if (productCosts >= minCost) {
-        String productName = j.getName();
-        System.out.println(productName);
+      if (j.getCost() >= minCost) {
+        System.out.println(j.getName());
       }
     }
   }
