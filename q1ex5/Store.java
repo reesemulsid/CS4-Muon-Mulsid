@@ -1,3 +1,4 @@
+package q1ex5;
 import java.util.*;
 
 public class Store {
