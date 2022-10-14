@@ -57,8 +57,10 @@ public class Store {
   }
 
   public void filterType(String type) {
-    for (String type : itemList) {
-      System.out.println(i);
+    for (int i = 1; i < itemList.size(); i++) {
+      if (itemList.get(i).getType().equals(type)) {
+        System.out.println(itemList.get(i).getType());
+      }
     }
   }
 
