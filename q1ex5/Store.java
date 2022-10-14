@@ -1,4 +1,3 @@
-package q1ex5;
 import java.util.*;
 
 public class Store {
@@ -35,26 +34,25 @@ public class Store {
 
   public void sellItem(String name) {
     for (Item i : itemList) {
-      if (i.contains(name)) {
-        Item product = itemList.get(index);
-        double itemCost = product.getCost();
+      String sampleName = i.getName();
+      if (sampleName == name) {
+        double itemCost = i.getCost();
         double sale = earnings + itemCost;
         System.out.println("Store's current sales are " + sale);
       } else {
         System.out.println("There are only " + itemList.size() + " items in the store.");
       }
     }
-    // check if Item with given name is in the itemList (you will need to loop over
-    // itemList) (if not, print statement that the store doesn't sell it)
-    // get Item from itemList and add its cost to earnings
-    // print statement indicating the sale
   }
 
   public void sellItem(Item i) {
-    // check if Item i exists in the store (there is a method that can help with
-    // this) (if not, print statement that the store doesn't sell it)
-    // get Item i from itemList and add its cost to earnings
-    // print statement indicating the sale
+    if (itemList.contains(i)) {
+      double itemCost = i.getCost();
+      double sale = earnings + itemCost;
+      System.out.println("Store's current sales are " + sale);
+    } else {
+      System.out.println("The store does not sell this item.");
+    }
   }
 
   public void addItem(Item i) {
@@ -66,22 +64,58 @@ public class Store {
   }
 
   public void filterCheap(double maxCost) {
-    maxCost = itemList.get(0);
+    Item product = itemList.get(0);
+    maxCost = product.getCost();
+
     for (int i = 0; i < itemList.size(); i++) {
-      if (itemList.get(i) > maxCost) {
-        maxCost = itemList[i];
+      Item sampleProduct = itemList.get(i);
+      double sampleCost = sampleProduct.getCost();
+      if (sampleCost > maxCost) {
+        maxCost = sampleCost;
       }
     }
-    // loop over itemList and print all items with a cost lower than or equal to the
-    // specified value
+
+    for (Item j : itemList) {
+      double productCosts = j.getCost();
+      if (productCosts <= maxCost) {
+        String productName = j.getName();
+        System.out.println(productName);
+      }
+    }
   }
 
   public void filterExpensive(double minCost) {
-    // loop over itemList and print all items with a cost higher than or equal to
-    // the specified value
+    Item product = itemList.get(0);
+    minCost = product.getCost();
+
+    for (int i = 0; i < itemList.size(); i++) {
+      Item sampleProduct = itemList.get(i);
+      double sampleCost = sampleProduct.getCost();
+      if (sampleCost < minCost) {
+        minCost = sampleCost;
+      }
+    }
+
+    for (Item j : itemList) {
+      double productCosts = j.getCost();
+      if (productCosts >= minCost) {
+        String productName = j.getName();
+        System.out.println(productName);
+      }
+    }
   }
 
   public static void printStats() {
+    for (Item i : storeList) {
+      String productName = i.getName();
+      System.out.println(productName);
+
+      double productCost = i.getCost();
+      double overallEarnings = i.getEarnings();
+
+      double sale = overallEarnings + productCost;
+      System.out.println(productCost);
+    }
     // loop over storeList and print the name and the earnings'Store.java'
 
   }
