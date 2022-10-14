@@ -6,27 +6,32 @@ public class Item {
   private double cost;
   private static ArrayList<Item> completeItemList = new ArrayList();
 
-  public Item(String name, String type, double cost){
+  public Item(String name, String type, double cost) {
     this.name = name;
     this.type = type;
     this.cost = cost;
     completeItemList.add(this);
   }
-  public String getName(){
+
+  public String getName() {
     return name;
   }
-  public String getType(){
+
+  public String getType() {
     return type;
   }
-  public double getCost(){
+
+  public double getCost() {
     return cost;
   }
-  public static Item getItem(int index){
+
+  public static Item getItem(int index) {
     return completeItemList.get(index);
   }
-  public static void printAllItems(){
-    for(Item i : completeItemList){
-      System.out.printf("Name: %s%nType: %s%nCost:%.2f%n", completeItemList.get(i), completeItemList.getType(), completeItemList.getCost());
+
+  public static void printAllItems() {
+    for (Item i : completeItemList) {
+      System.out.printf("Name: %s%nType: %s%nCost:%.2f%n");
     }
   }
 }
