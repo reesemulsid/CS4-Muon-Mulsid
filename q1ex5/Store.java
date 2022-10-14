@@ -108,16 +108,8 @@ public class Store {
 
   public static void printStats() {
     for (Item i : storeList) {
-      String productName = i.getName();
-      System.out.println(productName);
-
-      double productCost = i.getCost();
-      double overallEarnings = i.getEarnings();
-
-      double sale = overallEarnings + productCost;
-      System.out.println(productCost);
+      System.out.println(i.getName());
+      System.out.println(i.getEarnings());
     }
-    // loop over storeList and print the name and the earnings'Store.java'
-
   }
 }
